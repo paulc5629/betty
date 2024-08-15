@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-noteapp-dev-68329-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654195481:role/amplify-noteapp-dev-68329-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654195481:role/amplify-noteapp-dev-68329-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-noteapp-dev-68329-deployment",
+      "UnauthRoleName": "amplify-noteapp-dev-68329-unauthRole",
+      "StackName": "amplify-noteapp-dev-68329",
+      "StackId": "arn:aws:cloudformation:eu-west-1:654654195481:stack/amplify-noteapp-dev-68329/4f0d46a0-5b0c-11ef-94fd-0aaa2d76b6e9",
+      "AmplifyAppId": "d2gy7wycch4tw0"
+    }
+  },
+  "betty": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-noteapp-betty-2c07b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654195481:role/amplify-noteapp-betty-2c07b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654195481:role/amplify-noteapp-betty-2c07b-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-noteapp-betty-2c07b-deployment",
+      "UnauthRoleName": "amplify-noteapp-betty-2c07b-unauthRole",
+      "StackName": "amplify-noteapp-betty-2c07b",
+      "StackId": "arn:aws:cloudformation:eu-west-2:654654195481:stack/amplify-noteapp-betty-2c07b/cda013d0-5b0c-11ef-9439-025aa080deb1",
+      "AmplifyAppId": "d2zp1bu1vyruz9"
+    }
+  }
+}
