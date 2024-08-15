@@ -1,16 +1,5 @@
 import { useState } from 'react'
-import {
-  Authenticator,
-  Button,
-  Text,
-  TextField,
-  Heading,
-  Flex,
-  View,
-  Image,
-  Grid,
-  Divider,
-} from "@aws-amplify/ui-react";
+
 import './App.css'
 
 function App() {
