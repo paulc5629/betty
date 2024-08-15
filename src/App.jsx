@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import {
-  Authenticator
+  Authenticator,
+  Button,
+  Text,
+  TextField,
+  Heading,
+  Flex,
+  View,
+  Image,
+  Grid,
+  Divider,
 } from "@aws-amplify/ui-react";
 import './App.css'
 
