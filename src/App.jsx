@@ -59,6 +59,7 @@ export default function App() {
     const { data: newNote } = await client.models.Note.create({
       name: form.get("name"),
       description: form.get("description"),
+      battery: form.get("battery"),
       image: form.get("image").name,
     });
 
@@ -123,6 +124,14 @@ export default function App() {
                 variation="quiet"
                 required
               />
+              <TextField
+                name="battery"
+                placeholder="Battery Level"
+                label="Battery Level"
+                labelHidden
+                variation="quiet"
+                required
+              />
               <View
                 name="image"
                 as="input"
@@ -161,6 +170,7 @@ export default function App() {
                   <Heading level="3">{note.name}</Heading>
                 </View>
                 <Text fontStyle="italic">{note.description}</Text>
+                <Text fontStyle="italic">{note.battery}</Text>
                 {note.image && (
                   <Image
                     src={note.image}
