@@ -123,7 +123,6 @@ export default function App() {
                 label="Note Description"
                 labelHidden
                 variation="quiet"
-                required
               />
               <TextField
                 name="battery"
@@ -131,7 +130,6 @@ export default function App() {
                 label="Battery Level"
                 labelHidden
                 variation="quiet"
-                required
               />
               <View
                 name="image"
