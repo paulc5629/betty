@@ -10,6 +10,7 @@ import {
   Image,
   Grid,
   Divider,
+  SelectField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -108,8 +109,17 @@ export default function App() {
               gap="2rem"
               padding="2rem"
             >
+              <SelectField label="Fruit" name="name"
+                descriptiveText="What's your favorite fruit?">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="orange" disabled>Orange</option>
+                <option value="pineapple">Pineapple</option>
+                <option value="kiwi">Kiwi</option>
+                <option value="tangerine">Tangerine</option>
+              </SelectField>
               <TextField
-                name="name"
+                name="name2"
                 placeholder="Note Name"
                 label="Note Name"
                 labelHidden
