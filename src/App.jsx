@@ -111,21 +111,12 @@ export default function App() {
             >
               <SelectField label="Fruit" name="name"
                 descriptiveText="What's your favorite fruit?">
-                <option value="apple">Apple</option>
-                <option value="banana">Banana</option>
-                <option value="orange" disabled>Orange</option>
-                <option value="pineapple">Pineapple</option>
-                <option value="kiwi">Kiwi</option>
-                <option value="tangerine">Tangerine</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack before bed">Before Bed Snack</option>
+                <option value="snack any time">Snack</option>
               </SelectField>
-              <TextField
-                name="name2"
-                placeholder="Note Name"
-                label="Note Name"
-                labelHidden
-                variation="quiet"
-                required
-              />
               <TextField
                 name="description"
                 placeholder="Note Description"
