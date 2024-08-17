@@ -110,8 +110,8 @@ export default function App() {
               gap="2rem"
               padding="2rem"
             >
-            <SelectField label="Fruit" name="name"
-              descriptiveText="What's your favorite fruit?">
+            <SelectField label="Food" name="name"
+              descriptiveText="Select Option">
               <option value="breakfast">Breakfast</option>
               <option value="lunch">Lunch</option>
               <option value="dinner">Dinner</option>
@@ -120,8 +120,8 @@ export default function App() {
             </SelectField>
               <TextField
                 name="description"
-                placeholder="Note Description"
-                label="Note Description"
+                placeholder="Record Note's"
+                label="Record Note's"
                 labelHidden
                 variation="quiet"
               />
@@ -142,7 +142,7 @@ export default function App() {
                 />
 
               <Button type="submit" variation="primary">
-                Create Note
+                Save Record
               </Button>
             </Flex>
           </View>
