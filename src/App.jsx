@@ -11,6 +11,7 @@ import {
   Grid,
   Divider,
   SelectField,
+  SliderField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -124,20 +125,19 @@ export default function App() {
                 labelHidden
                 variation="quiet"
               />
-              <TextField
-                name="battery"
-                placeholder="Battery Level"
+              <SliderField
                 label="Battery Level"
-                labelHidden
-                variation="quiet"
+                name="battery"
+                min={0}
+                max={100}
               />
               <View
-                name="image"
-                as="input"
-                type="file"
-                alignSelf={"end"}
-                accept="image/png, image/jpeg"
-              />
+                  name="image"
+                  as="input"
+                  type="file"
+                  alignSelf={"end"}
+                  accept="image/png, image/jpeg"
+                />
 
               <Button type="submit" variation="primary">
                 Create Note
