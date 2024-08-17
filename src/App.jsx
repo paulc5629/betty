@@ -102,7 +102,7 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
-          <Heading level={1}>My Notes App</Heading>
+          <Heading level={1}>Add Record</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
@@ -110,14 +110,14 @@ export default function App() {
               gap="2rem"
               padding="2rem"
             >
-              <SelectField label="Fruit" name="name"
-                descriptiveText="What's your favorite fruit?">
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="snack before bed">Before Bed Snack</option>
-                <option value="snack any time">Snack</option>
-              </SelectField>
+            <SelectField label="Fruit" name="name"
+              descriptiveText="What's your favorite fruit?">
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack before bed">Before Bed Snack</option>
+              <option value="snack any time">Snack</option>
+            </SelectField>
               <TextField
                 name="description"
                 placeholder="Note Description"
