@@ -130,6 +130,8 @@ export default function App() {
                 name="battery"
                 min={0}
                 max={100}
+                step={5}
+                defaultValue={50}
               />
               <View
                   name="image"
