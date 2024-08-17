@@ -98,8 +98,8 @@ export default function App() {
           className="App"
           justifyContent="center"
           alignItems="center"
-          direction="horizontal"
-          width="70%"
+          direction="vertical"
+          width="100%"
           margin="0 auto"
         >
           <Heading level={1}>My Notes App</Heading>
