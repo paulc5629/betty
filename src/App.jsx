@@ -98,7 +98,7 @@ export default function App() {
           className="App"
           justifyContent="center"
           alignItems="center"
-          direction="vertical"
+          direction="column"
           width="100%"
           margin="0 auto"
         >
