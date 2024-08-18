@@ -3,17 +3,18 @@ import {
     Button,
     Text,
   } from "@aws-amplify/ui-react";
+  import { getCurrentUser } from "aws-amplify/auth";
 
-
+const email = await getCurrentUser();
 
 
 function Header(){
     return (
         <header>
             <Authenticator >
-            {({ signOut, user}) => (
+            {({ signOut,}) => (
                 <div>
-                    <Text>Welcome, {user?.name}</Text>
+                    <Text>Welcome, {email}</Text>
                     <Button onClick={signOut}>Sign Out</Button>
                 </div>
             )}  
