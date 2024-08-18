@@ -16,7 +16,7 @@ function Header(){
             <Authenticator >
             {({ signOut, user}) => (
                 <div>
-                    <Text>Welcome, {user?.username}</Text>
+                    <Text>Welcome, {user?.email}</Text>
                     <Button onClick={signOut}>Sign Out</Button>
                 </div>
             )}  
