@@ -11,6 +11,7 @@ function Header(){
                 <div>
                     <Text>Welcome, {user?.username}</Text>
                     <Button onClick={signOut}>Sign Out</Button>
+                    console.log(user);
                 </div>
             )}  
             </Authenticator>
