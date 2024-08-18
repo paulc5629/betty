@@ -19,6 +19,8 @@ import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 
+import Header from "./componets/header";
+
 /**
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
  */
@@ -102,6 +104,7 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
+          <Header />
           <Heading level={1}>Add Record</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
