@@ -1,10 +1,22 @@
-
+import {
+    Authenticator,
+    Button,
+    Text,
+  } from "@aws-amplify/ui-react";
+  
+  import outputs from "../amplify_outputs.json";
 
 function Header(){
     return (
         <header>
-            <h1>My React App</h1>
-            <p>This is a simple React application.</p>
+            <Authenticator >
+            {({ signOut }) => (
+                <div>
+                    <Text>Welcome, {outputs.cognitoUserPool.DefaultClientSecretUsername}</Text>
+                    <Button onClick={signOut}>Sign Out</Button>
+                </div>
+            )}  
+            </Authenticator>
         </header>
     );
 }
