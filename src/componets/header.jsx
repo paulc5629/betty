@@ -5,7 +5,7 @@ import {
   } from "@aws-amplify/ui-react";
   import { getCurrentUser } from "aws-amplify/auth";
 
-const email = await getCurrentUser();
+const email = getCurrentUser();
 
 
 function Header(){
