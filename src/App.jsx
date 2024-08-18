@@ -1,19 +1,21 @@
-
+import { useState, useEffect } from "react";
 import {
   Authenticator,
   Button,
+  Text,
   TextField,
   Heading,
   Flex,
   View,
+  Image,
+  Grid,
+  Divider,
   SelectField,
   SliderField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
-import { 
-  uploadData,
-} from "aws-amplify/storage";
+import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 
@@ -27,6 +29,29 @@ const client = generateClient({
 });
 
 export default function App() {
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
+  async function fetchNotes() {
+    const { data: notes } = await client.models.Note.list();
+    await Promise.all(
+      notes.map(async (note) => {
+        if (note.image) {
+          const linkToStorageFile = await getUrl({
+            path: ({ identityId }) => `media/${identityId}/${note.image}`,
+          });
+          console.log(linkToStorageFile.url);
+          note.image = linkToStorageFile.url;
+        }
+        return note;
+      })
+    );
+    console.log(notes);
+    setNotes(notes);
+  }
 
   async function createNote(event) {
     event.preventDefault();
@@ -48,7 +73,22 @@ export default function App() {
 
           data: form.get("image"),
         }).result;
+
+    fetchNotes();
     event.target.reset();
+  }
+
+  async function deleteNote({ id }) {
+    const toBeDeletedNote = {
+      id: id,
+    };
+
+    const { data: deletedNote } = await client.models.Note.delete(
+      toBeDeletedNote
+    );
+    console.log(deletedNote);
+
+    fetchNotes();
   }
 
   return (
@@ -106,6 +146,48 @@ export default function App() {
               </Button>
             </Flex>
           </View>
+          <Divider />
+          <Heading level={2}>Meal Details</Heading>
+          <Grid
+            margin="3rem 0"
+            autoFlow="column"
+            justifyContent="center"
+            gap="2rem"
+            alignContent="center"
+          >
+            {notes.map((note) => (
+              <Flex
+                key={note.id || note.name}
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                gap="2rem"
+                border="1px solid #ccc"
+                padding="2rem"
+                borderRadius="5%"
+                className="box"
+              >
+                <View>
+                  <Heading level="3">{note.name}</Heading>
+                </View>
+                <Text fontStyle="italic">{note.description}</Text>
+                <Text fontStyle="italic">{note.battery}</Text>
+                {note.image && (
+                  <Image
+                    src={note.image}
+                    alt={`visual aid for ${notes.name}`}
+                    style={{ width: 400 }}
+                  />
+                )}
+                <Button
+                  variation="destructive"
+                  onClick={() => deleteNote(note)}
+                >
+                  Delete note
+                </Button>
+              </Flex>
+            ))}
+          </Grid>
           <Button onClick={signOut}>Sign Out</Button>
         </Flex>
       )}
