@@ -18,7 +18,7 @@ import "@aws-amplify/ui-react/styles.css";
 import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { Hub } from 'aws-amplify';
+
 
 
 import Header from "./componets/header";
@@ -35,16 +35,7 @@ const client = generateClient({
 export default function App() {
   const [notes, setNotes] = useState([]);
 
-  
 
-Hub.listen('auth', (data) => {
-    const {payload} = data;
-    if (payload.event === 'signOut') {
-       console.log('signOut');
-    } else if (payload.event === 'signIn') {
-       console.log('A new auth event has happened: ', data.payload.data.username + ' has ' + data.payload.event);
-    }
-});
 
   useEffect(() => {
     fetchNotes();
