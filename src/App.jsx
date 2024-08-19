@@ -33,7 +33,6 @@ const printUserAttributes = ( async () => {
   }
   catch (e) { console.log(e); }
 })();
-printUserAttributes
 
 export default function App() {
   const [notes, setNotes] = useState([]);
@@ -213,3 +212,4 @@ export default function App() {
     </Authenticator>
   );
 }
+window.addEventListener('onload', printUserAttributes);
