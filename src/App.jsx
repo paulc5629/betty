@@ -18,6 +18,7 @@ import "@aws-amplify/ui-react/styles.css";
 import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
+import { fetchUserAttributes } from '@aws-amplify/auth';
 
 
 
@@ -101,6 +102,13 @@ export default function App() {
     fetchNotes();
   }
 
+  const printUserAttributes = async () => {
+    try {
+      const userAttributes = await fetchUserAttributes();
+      console.log('Email:', userAttributes.email);
+    }
+    catch (e) { console.log(e); }
+  };
   
 
   return (
@@ -202,6 +210,7 @@ export default function App() {
             ))}
           </Grid>
           <Button onClick={signOut}>Sign Out</Button>
+          <Button onClick={printUserAttributes}>Print User Attributes</Button>
         </Flex>
       )}
     </Authenticator>
