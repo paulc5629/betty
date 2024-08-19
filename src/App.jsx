@@ -109,6 +109,7 @@ export default function App() {
     }
     catch (e) { console.log(e); }
   })();
+  const email = printUserAttributes;
 
 
   return (
@@ -123,7 +124,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}>Add Record {printUserAttributes}</Heading>
+          <Heading level={1}>Add Record {email}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
