@@ -115,7 +115,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}>Add Record {user?.username}</Heading>
+          <Heading level={1}>Add Record {user?.useremail}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
