@@ -28,9 +28,7 @@ const client = generateClient({
 
 export default function App() {
   const [notes, setNotes] = useState([]);
-  window.onload = () => {
-    printUserAttributes;
-  };
+  window.onload = ("load", printUserAttributes);
   
   const printUserAttributes = ( async () => {
     try {
@@ -44,7 +42,6 @@ export default function App() {
 
   useEffect(() => {
     fetchNotes();
-    
   }, []);
   
   async function fetchNotes() {
