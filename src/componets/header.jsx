@@ -19,5 +19,5 @@ function Header(){
         </header>
     );
 }
-console.log(user);
+
 export default Header;
