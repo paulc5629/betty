@@ -38,7 +38,7 @@ export default function App() {
   useEffect(() => {
     fetchNotes();
   }, []);
-
+  
   async function fetchNotes() {
     const { data: notes } = await client.models.Note.list();
     await Promise.all(
