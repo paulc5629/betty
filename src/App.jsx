@@ -43,7 +43,7 @@ export default function App() {
   const printUserAttributes =( async () => {
     try {
       const userAttributes = await fetchUserAttributes();
-      console.log( 'Email', userAttributes.email);
+      document.getElementById("welcomeUser").innerHTML =  userAttributes.email;
     }
     catch (e) { console.log(e); }
   })();
@@ -126,7 +126,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}></Heading>
+          <Heading level={1} name="welcomeUser"></Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
