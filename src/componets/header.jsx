@@ -3,24 +3,21 @@ import {
     Button,
     Text,
   } from "@aws-amplify/ui-react";
-  import { fetchUserAttributes } from 'aws-amplify/auth';
 
-const user = fetchUserAttributes();
-console.log(user)
 function Header(){
     return (
         <header>
             <Authenticator >
-            {({ signOut}) => (
+            {({ signOut, user}) => (
                 <div>
-                    <Text>Welcome</Text>
+                    <Text>Welcome {user?.username}</Text>
                     <Button onClick={signOut}>Sign Out</Button>
-                    console.log(user);
+                    
                 </div>
             )}  
             </Authenticator>
         </header>
     );
 }
-
+console.log(user);
 export default Header;
