@@ -1,17 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  Authenticator,
-  Button,
-  Text,
-  TextField,
-  Heading,
-  Flex,
-  View,
-  Image,
-  Grid,
-  Divider,
-  SelectField,
-  SliderField,
+  Authenticator, Button, Text, TextField, Heading, Flex, View, Image, Grid, Divider, SelectField, SliderField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -39,7 +28,10 @@ const client = generateClient({
 
 export default function App() {
   const [notes, setNotes] = useState([]);
-  printUserAttributes;
+  window.onload = () => {
+    printUserAttributes;
+  };
+  
   const printUserAttributes = ( async () => {
     try {
       const userAttributes = await fetchUserAttributes();
