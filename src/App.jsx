@@ -26,17 +26,20 @@ const client = generateClient({
   authMode: "userPool",
 });
 
+const printUserAttributes = ( async () => {
+  try {
+    const userAttributes = await fetchUserAttributes();
+    document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
+  }
+  catch (e) { console.log(e); }
+})();
+printUserAttributes
+
 export default function App() {
   const [notes, setNotes] = useState([]);
-  printUserAttributes
+  
  
-  const printUserAttributes = ( async () => {
-    try {
-      const userAttributes = await fetchUserAttributes();
-      document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
-    }
-    catch (e) { console.log(e); }
-  })();
+
   
 
 
