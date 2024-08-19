@@ -102,9 +102,9 @@ export default function App() {
     fetchNotes();
   }
 
-  const printUserAttributes = async () => {
+  function printUserAttributes() {
     try {
-      const userAttributes = await fetchUserAttributes();
+      const userAttributes = fetchUserAttributes();
       console.log( 'Email', userAttributes.email);
     }
     catch (e) { console.log(e); }
