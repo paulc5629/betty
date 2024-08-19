@@ -28,8 +28,8 @@ const client = generateClient({
 
 export default function App() {
   const [notes, setNotes] = useState([]);
+ 
   window.onload = ("load", printUserAttributes);
-  
   const printUserAttributes = ( async () => {
     try {
       const userAttributes = await fetchUserAttributes();
