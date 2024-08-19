@@ -113,7 +113,7 @@ export default function App() {
 
   return (
     <Authenticator>
-      {({ signOut, user }) => (
+      {({ signOut}) => (
         <Flex
           className="App"
           justifyContent="center"
@@ -123,7 +123,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}>Add Record {user?.userEmail}</Heading>
+          <Heading level={1}>Add Record {printUserAttributes.email}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
