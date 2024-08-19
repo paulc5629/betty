@@ -19,6 +19,7 @@ import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 
+Amplify.configure(outputs);
 
 
 import Header from "./componets/header";
