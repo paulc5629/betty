@@ -102,9 +102,14 @@ export default function App() {
     fetchNotes();
   }
 
-      const userAttributes = fetchUserAttributes();
+  const printUserAttributes = async () => {
+    try {
+      const userAttributes = await fetchUserAttributes();
+      console.log( 'Email', userAttributes.email);
+    }
+    catch (e) { console.log(e); }
+  };
 
-  
 
   return (
     <Authenticator>
@@ -118,7 +123,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}>Add Record {userAttributes.email}</Heading>
+          <Heading level={1}>Add Record {printUserAttributes()}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
