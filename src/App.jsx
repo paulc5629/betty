@@ -40,6 +40,14 @@ const client = generateClient({
 export default function App() {
   const [notes, setNotes] = useState([]);
 
+  const printUserAttributes =( async () => {
+    try {
+      const userAttributes = await fetchUserAttributes();
+      console.log( 'Email', userAttributes.email);
+    }
+    catch (e) { console.log(e); }
+  })();
+  const email = printUserAttributes;
 
 
   useEffect(() => {
@@ -102,14 +110,7 @@ export default function App() {
     fetchNotes();
   }
 
-  const printUserAttributes =( async () => {
-    try {
-      const userAttributes = await fetchUserAttributes();
-      console.log( 'Email', userAttributes.email);
-    }
-    catch (e) { console.log(e); }
-  })();
-  const email = printUserAttributes;
+
 
 
   return (
@@ -211,7 +212,7 @@ export default function App() {
             ))}
           </Grid>
           <Button onClick={signOut}>Sign Out</Button>
-          <Button onClick={printUserAttributes}>Print User Attributes</Button>
+          
         </Flex>
       )}
     </Authenticator>
