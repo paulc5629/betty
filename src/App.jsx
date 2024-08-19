@@ -52,6 +52,7 @@ export default function App() {
 
   useEffect(() => {
     fetchNotes();
+    printUserAttributes;
   }, []);
   
   async function fetchNotes() {
@@ -70,7 +71,7 @@ export default function App() {
     );
     console.log(notes);
     setNotes(notes);
-    printUserAttributes;
+    
   }
 
   async function createNote(event) {
