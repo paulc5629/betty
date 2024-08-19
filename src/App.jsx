@@ -19,6 +19,9 @@ import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 
+import { fetchUserAttributes } from "@aws-amplify/auth";
+
+
 import Header from "./componets/header";
 
 /**
@@ -92,6 +95,15 @@ export default function App() {
 
     fetchNotes();
   }
+
+  const printUserAttributes = async () => {
+    try {
+      const userAttributes = await fetchUserAttributes();
+      console.log('Email:', userAttributes.email);
+    }
+    catch (e) { console.log(e); }
+  };
+  console.log('User attributes:', printUserAttributes.email);
 
   return (
     <Authenticator>
