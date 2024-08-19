@@ -43,7 +43,7 @@ export default function App() {
   const printUserAttributes =( async () => {
     try {
       const userAttributes = await fetchUserAttributes();
-      document.getElementById("welcomeUser").innerHTML = userAttributes.email;
+      document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
     }
     catch (e) { console.log(e); }
   })();
