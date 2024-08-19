@@ -19,7 +19,7 @@ function Header(){
     return (
         <header>
             <Authenticator >
-            {({ signOut, user}) => (
+            {({ signOut}) => (
                 <div>
                     <Text>Welcome {printUserAttributes.email}</Text>
                     <Button onClick={signOut}>Sign Out</Button>
