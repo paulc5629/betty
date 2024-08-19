@@ -39,8 +39,8 @@ const client = generateClient({
 
 export default function App() {
   const [notes, setNotes] = useState([]);
-
-  const printUserAttributes =( async () => {
+  printUserAttributes;
+  const printUserAttributes = ( async () => {
     try {
       const userAttributes = await fetchUserAttributes();
       document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
@@ -52,7 +52,7 @@ export default function App() {
 
   useEffect(() => {
     fetchNotes();
-    printUserAttributes;
+    
   }, []);
   
   async function fetchNotes() {
@@ -127,7 +127,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1} id="welcomeUser">{printUserAttributes}</Heading>
+          <Heading level={1} id="welcomeUser"></Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
