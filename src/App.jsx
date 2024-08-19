@@ -18,6 +18,9 @@ import "@aws-amplify/ui-react/styles.css";
 import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
+import { getCurrentUser } from "aws-amplify/auth";
+
+const {username} = await getCurrentUser();
 
 Amplify.configure(outputs);
 
@@ -112,7 +115,7 @@ export default function App() {
           margin="0 auto"
         >
           <Header />
-          <Heading level={1}>Add Record</Heading>
+          <Heading level={1}>Add Record {username}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"

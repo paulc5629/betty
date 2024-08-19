@@ -3,7 +3,6 @@ import {
     Button,
     Text,
   } from "@aws-amplify/ui-react";
-  
 
 
 
@@ -13,7 +12,7 @@ function Header(){
             <Authenticator >
             {({ signOut}) => (
                 <div>
-                    <Text>Welcome {}</Text>
+                    <Text>Welcome </Text>
                     <Button onClick={signOut}>Sign Out</Button>
                     
                 </div>
