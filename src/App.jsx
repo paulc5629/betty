@@ -115,7 +115,7 @@ export default function App() {
 
 
   return (
-    <Authenticator>
+    <Authenticator variation="modal">
       {({ signOut}) => (
         <Flex
           className="App"
