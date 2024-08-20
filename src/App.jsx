@@ -106,7 +106,6 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
-          <Header />
           <Heading level={1} id="welcomeUser"></Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
@@ -196,6 +195,7 @@ export default function App() {
           <Button onClick={signOut}>Sign Out</Button>          
         </Flex>
       )}
+      <foooter />
     </Authenticator>
   );
 }
