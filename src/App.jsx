@@ -6,12 +6,10 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { getUrl, uploadData} from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
-import outputs from "../amplify_outputs.json";
 import { fetchUserAttributes } from '@aws-amplify/auth';
-
+import outputs from "@/amplify_outputs.json";
 Amplify.configure(outputs);
 
-import Header from "./componets/header";
 
 /**
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
@@ -195,7 +193,6 @@ export default function App() {
           <Button onClick={signOut}>Sign Out</Button>          
         </Flex>
       )}
-      <foooter />
     </Authenticator>
   );
 }
