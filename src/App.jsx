@@ -9,11 +9,7 @@ import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 import { fetchUserAttributes } from '@aws-amplify/auth';
 
-
-
-
 Amplify.configure(outputs);
-
 
 import Header from "./componets/header";
 
@@ -37,11 +33,6 @@ printUserAttributes
 
 export default function App() {
   const [notes, setNotes] = useState([]);
-  
- 
-
-  
-
 
   useEffect(() => {
     fetchNotes();
@@ -104,13 +95,9 @@ export default function App() {
     fetchNotes();
   }
 
-
-
-
   return (
     <Authenticator variation="modal">
       {({ signOut}) => (
-        
         <Flex
           className="App"
           justifyContent="center"
@@ -206,8 +193,7 @@ export default function App() {
               </Flex>
             ))}
           </Grid>
-          <Button onClick={signOut}>Sign Out</Button>
-          
+          <Button onClick={signOut}>Sign Out</Button>          
         </Flex>
       )}
     </Authenticator>
