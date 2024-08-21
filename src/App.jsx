@@ -105,7 +105,7 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
-          <Heading level={1} id="welcomeUser">Welcome to Betty</Heading>
+          <Heading level={1} id="welcomeUser">Welcome to {printUserAttributes}</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
