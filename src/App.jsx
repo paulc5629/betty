@@ -33,6 +33,7 @@ export default function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
+    printUserAttributes
     fetchNotes();
   }, []);
   
