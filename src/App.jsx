@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  Authenticator, Button, Card, Text, TextField, Heading, Flex, View, Image, Grid, Divider, SelectField, SliderField,
+  Authenticator, Button, Text, TextField, Heading, Flex, View, Image, Grid, Divider, SelectField, SliderField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -110,16 +110,9 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
-          <Card
-              columnStart="1"
-              columnEnd="-1"
-            >
+      
           <Heading level={1} id="welcomeUser">Welcome to Betty</Heading>
-          </Card>
-          <Card
-            columnStart="1"
-            columnEnd="2"
-          >
+          
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
@@ -162,16 +155,8 @@ export default function App() {
                 Save Record
               </Button>
             </Flex>
-            </View>
-          </Card>
-          
+          </View>
           <Divider />
-          <Card
-            columnStart="2"
-            columnEnd="-1"
-            rowStart="2"
-            rowEnd="-1"
-          >
           <Heading level={2}>Meal Details</Heading>
           <Grid
             margin="3rem 0"
@@ -213,13 +198,7 @@ export default function App() {
               </Flex>
             ))}
           </Grid>
-          </Card>
-          <Card
-            columnStart="1"
-            columnEnd="-1"
-          >
-          <Button onClick={signOut}>Sign Out</Button>  
-          </Card>        
+          <Button onClick={signOut}>Sign Out</Button>          
         </Flex>
       </Grid>
       )}
