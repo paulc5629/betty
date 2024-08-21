@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  Authenticator, Button, Text, TextField, Heading, Flex, View, Image, Grid, Divider, SelectField, SliderField,
+  Authenticator, Button, Card, Text, TextField, Heading, Flex, View, Image, Grid, Divider, SelectField, SliderField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -96,6 +96,12 @@ export default function App() {
   return (
     <Authenticator variation="modal">
       {({ signOut}) => (
+        <Grid
+        columnGap="0.5rem"
+        rowGap="0.5rem"
+        templateColumns="1fr 1fr 1fr"
+        templateRows="1fr 3fr 1fr"
+        >
         <Flex
           className="App"
           justifyContent="center"
@@ -104,7 +110,16 @@ export default function App() {
           width="100%"
           margin="0 auto"
         >
+          <Card
+              columnStart="1"
+              columnEnd="-1"
+            >
           <Heading level={1} id="welcomeUser">Welcome to Betty</Heading>
+          </Card>
+          <Card
+            columnStart="1"
+            columnEnd="2"
+          >
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
@@ -147,8 +162,16 @@ export default function App() {
                 Save Record
               </Button>
             </Flex>
-          </View>
+            </View>
+          </Card>
+          
           <Divider />
+          <Card
+            columnStart="2"
+            columnEnd="-1"
+            rowStart="2"
+            rowEnd="-1"
+          >
           <Heading level={2}>Meal Details</Heading>
           <Grid
             margin="3rem 0"
@@ -190,8 +213,15 @@ export default function App() {
               </Flex>
             ))}
           </Grid>
-          <Button onClick={signOut}>Sign Out</Button>          
+          </Card>
+          <Card
+            columnStart="1"
+            columnEnd="-1"
+          >
+          <Button onClick={signOut}>Sign Out</Button>  
+          </Card>        
         </Flex>
+      </Grid>
       )}
     </Authenticator>
   );
