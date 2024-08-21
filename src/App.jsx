@@ -21,10 +21,11 @@ const client = generateClient({
 });
 
 const printUserAttributes = ( async () => {
-  try {
-    const userAttributes = await fetchUserAttributes();
-    document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
-  }
+  await Promise.all()
+    try {
+      const userAttributes = await fetchUserAttributes();
+      document.getElementById("welcomeUser").innerHTML = "Welcome, " + userAttributes.email;
+    }
   catch (e) { console.log(e); }
 })();
 printUserAttributes
