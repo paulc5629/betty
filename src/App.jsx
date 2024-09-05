@@ -96,12 +96,7 @@ export default function App() {
   return (
     <Authenticator variation="modal">
       {({ signOut}) => (
-        <Grid
-        columnGap="0.5rem"
-        rowGap="0.5rem"
-        templateColumns="1fr 1fr 1fr"
-        templateRows="1fr 3fr 1fr"
-        >
+
         <Flex
           className="App"
           justifyContent="center"
@@ -200,7 +195,6 @@ export default function App() {
           </Grid>
           <Button onClick={signOut}>Sign Out</Button>          
         </Flex>
-      </Grid>
       )}
     </Authenticator>
   );
