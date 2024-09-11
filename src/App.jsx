@@ -144,7 +144,7 @@ export default function App() {
                   type="file"
                   alignSelf={"end"}
                   accept="image/png, image/jpeg"
-                />
+              />
 
               <Button type="submit" variation="primary">
                 Save Record
